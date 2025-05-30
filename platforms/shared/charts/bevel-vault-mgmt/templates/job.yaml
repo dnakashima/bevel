@@ -58,7 +58,7 @@ spec:
           imagePullPolicy: IfNotPresent
           env:
           - name: VAULT_ADDR
-            value: "{{ $.Values.global.vault.address }}"
+            value: "http://10.100.92.107:8200"  #"{{ $.Values.global.vault.address }}"
           - name: VAULT_SECRET_PATH
             value: "{{ $.Values.global.vault.secretEngine }}"
           - name: KUBERNETES_AUTH_PATH
