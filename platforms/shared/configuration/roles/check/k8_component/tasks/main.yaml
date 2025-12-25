@@ -38,7 +38,7 @@
     context: "{{ kubernetes.context }}"
   register: component_data
   retries: "{{ network.env.retry_count }}"
-  delay: 35
+  delay: 60
   until: component_data.resources|length > 0
   when: 
     - component_type == "Namespace" or component_type == "ClusterRoleBinding" or component_type == "StorageClass"
