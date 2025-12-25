@@ -122,7 +122,7 @@ pipeline {
           chmod 400 ${VAULT_FILE}
           ssh-keyscan github.com >> ~/.ssh/known_hosts
           ssh-keyscan ${VAULT_BASTION} >> ~/.ssh/known_hosts
-          echo "127.0.0.1 ${VAULT_SERVER}" > /etc/hosts
+          echo "10.108.175.108 ${VAULT_SERVER}" > /etc/hosts
           echo "ServerAliveInterval ${SSH_SERVER_ALIVE_INTERVAL}" >> ~/.ssh/config
           echo "ServerAliveCountMax ${SSH_SERVER_ALIVE_COUNT_MAX}" >> ~/.ssh/config
           ssh -i ${VAULT_FILE} -f -q -N -L ${VAULT_PORT}:${VAULT_SERVER}:${VAULT_PORT} devinstance@${VAULT_BASTION}
